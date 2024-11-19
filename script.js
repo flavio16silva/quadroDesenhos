@@ -1,6 +1,7 @@
 /* ----------- DADOS INICIAIS ------------------------- */
 //Iniciando a cor com active em uma variavel:
 let corAtual = 'black'
+let possoDesenhar = false
 
 //Acessando a tela do Canvas
 let tela = document.querySelector('#tela')
@@ -30,14 +31,20 @@ function colorClickEvent(e){
 
 //Funções do mouse:
 function mouseDownEvent(){
+    possoDesenhar = true
     console.log('clicou no mouse')
 }
 
-function mouseMoveEvent(){
-    console.log('moveu o mouse')
+function mouseMoveEvent(e){
+    if(possoDesenhar){ //se verdadeiro
+        let pontoX = e.pageX - tela.offsetLeft //dentro da tela eixo X
+        let pontoY = e.pageY - tela.offsetTop  //dentro da tela eixo Y
+        console.log(pontoX, pontoY)        
+    }
 }
 
 function mouseUpEvent(){
+    possoDesenhar = false
     console.log('soltou o mouse')
 }
 
