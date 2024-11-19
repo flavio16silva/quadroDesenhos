@@ -21,6 +21,9 @@ tela.addEventListener('mousedown', mouseDownEvent)
 tela.addEventListener('mousemove', mouseMoveEvent)
 tela.addEventListener('mouseup', mouseUpEvent)
 
+//Botao para limpar a tela
+document.querySelector('.clear').addEventListener('click', limparTela)
+
 
 
 /* ----------------- FUNÇÕES --------------------------- */
@@ -80,6 +83,15 @@ function Desenhar(x, y){
     Obs.: a cada movimento do mouse pegará 
     a posição anterior e continuará.
     */
+}
+
+/*
+Limpar a tela
+ - Zerar o cursor e o processo de desenho
+*/
+function limparTela(){
+    contexto.setTransform(1, 0, 0, 1, 0, 0)
+    contexto.clearRect(0, 0, contexto.canvas.width, contexto.canvas.height) //limpar retangulo
 }
 
 
