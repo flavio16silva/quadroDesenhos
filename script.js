@@ -34,22 +34,46 @@ function colorClickEvent(e){
 }
 
 //Funções do mouse:
-function mouseDownEvent(){
+function mouseDownEvent(e){
     possoDesenhar = true
-    console.log('clicou no mouse')
+    //posição atual/anterior do mouse no momento do click
+    mouseX = e.pageX - tela.offsetLeft
+    mouseY = e.pageY - tela.offsetTop
+    
 }
 
 function mouseMoveEvent(e){
     if(possoDesenhar){ //se verdadeiro
-        let pontoX = e.pageX - tela.offsetLeft //dentro da tela eixo X
-        let pontoY = e.pageY - tela.offsetTop  //dentro da tela eixo Y
-        console.log(pontoX, pontoY)        
+        // let pontoX = e.pageX - tela.offsetLeft //dentro da tela eixo X
+        // let pontoY = e.pageY - tela.offsetTop  //dentro da tela eixo Y
+        // console.log(pontoX, pontoY)     
+        
+        Desenhar(e.pageX, e.pageY)
     }
 }
 
 function mouseUpEvent(){
     possoDesenhar = false
     console.log('soltou o mouse')
+}
+
+function Desenhar(x, y){
+    //posição que tem a desenhar
+    let pointX = x - e.tela.offsetLeft
+    let pointY = y - e.tela.offsetTop
+
+    //fazer o desenho - metodos relacionados a fazer uma linha
+    contexto.beginPath()            //caminho a desenhar
+    contexto.lineWidth = 5          //largura da linha
+    contexto.lineJoin = 'round'     //formato da linha - bola
+    contexto.moveTo(mouseX, mouseY) //movendo o mouse
+    contexto.lineTo(pointX, pointY) //faça uma linha
+    contexto.closepath()            //fechando o desenho
+    contexto.strokeStyle = corAtual //cor da linha
+    contexto.stroke()               //finalizar todo o processo
+
+    mouseX = pointX
+    mouseY = pointY
 }
 
 
