@@ -2,6 +2,9 @@
 //Iniciando a cor com active em uma variavel:
 let corAtual = 'black'
 let possoDesenhar = false
+//Posições do mouse - inicial
+let mouseX = 0
+let mouseY = 0
 
 //Acessando a tela do Canvas
 let tela = document.querySelector('#tela')
@@ -22,7 +25,8 @@ tela.addEventListener('mouseup', mouseUpEvent)
 
 /* ----------------- FUNÇÕES --------------------------- */
 function colorClickEvent(e){
-    let cor = e.target.getAttribute('data-color')
+    //target: elemento que disparou o evento
+    let cor = e.target.getAttribute('data-color') 
     corAtual = cor
 
     document.querySelector('.color.active').classList.remove('active')
