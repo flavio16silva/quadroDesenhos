@@ -54,13 +54,13 @@ function mouseMoveEvent(e){
 
 function mouseUpEvent(){
     possoDesenhar = false
-    console.log('soltou o mouse')
+    //console.log('soltou o mouse')
 }
 
 function Desenhar(x, y){
     //posição que tem a desenhar
-    let pointX = x - e.tela.offsetLeft
-    let pointY = y - e.tela.offsetTop
+    let pointX = x - tela.offsetLeft
+    let pointY = y - tela.offsetTop
 
     //fazer o desenho - metodos relacionados a fazer uma linha
     contexto.beginPath()            //caminho a desenhar
@@ -68,12 +68,18 @@ function Desenhar(x, y){
     contexto.lineJoin = 'round'     //formato da linha - bola
     contexto.moveTo(mouseX, mouseY) //movendo o mouse
     contexto.lineTo(pointX, pointY) //faça uma linha
-    contexto.closepath()            //fechando o desenho
+    contexto.closePath()            //fechando o desenho
     contexto.strokeStyle = corAtual //cor da linha
     contexto.stroke()               //finalizar todo o processo
 
+    //Salvando a posição do mouse como no anterior
     mouseX = pointX
     mouseY = pointY
+
+    /*
+    Obs.: a cada movimento do mouse pegará 
+    a posição anterior e continuará.
+    */
 }
 
 
