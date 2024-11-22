@@ -10,20 +10,26 @@
 <body>
     <h1>Desenhando no Canvas</h1>
 
-    <canvas id="tela" width="800" height="400"></canvas>
+    <div class="container">
+        <canvas id="tela" width="700" height="400"></canvas>
+    
+        <div class="controls">
+                <div class="colorArea">
+                    <div data-color="black" style="background-color: black" class="color active"></div>
+                    <div data-color="blue" style="background-color: blue" class="color"></div>
+                    <div data-color="red" style="background-color: red" class="color"></div>
+                    <div data-color="green" style="background-color: green" class="color"></div>
+                    <div data-color="yellow" style="background-color: yellow" class="color"></div>
+                    <div data-color="gray" style="background-color: gray" class="color"></div>
+                    <div data-color="violet" style="background-color: violet" class="color"></div>
+                    <div data-color="crimson" style="background-color: crimson" class="color"></div>
+                    <div data-color="maroon" style="background-color: maroon" class="color"></div>
+                </div>
 
-    <div class="colorArea">
-        <div data-color="black" style="background-color: black" class="color active"></div>
-        <div data-color="blue" style="background-color: blue" class="color"></div>
-        <div data-color="red" style="background-color: red" class="color"></div>
-        <div data-color="green" style="background-color: green" class="color"></div>
-        <div data-color="yellow" style="background-color: yellow" class="color"></div>
-        <div data-color="gray" style="background-color: gray" class="color"></div>
+                <button class="clear">Limpar Quadro</button>
+        </div>
     </div>
-
-    <button class="clear">Limpar Quadro</button>
-
-    <footer>Criado pela B7Web</footer>
+    <footer>Criado por Flávio Silva</footer>
 
     <script src="script.js"></script>
 </body>
